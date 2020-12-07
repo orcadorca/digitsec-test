@@ -120,7 +120,8 @@ public with sharing class SecurityScan {
         if(checkCase.isEmpty()){
         	isSetup = '1';
         }   
-        else
+        else 
+        
         {
         	isSetup = '0';
         }
