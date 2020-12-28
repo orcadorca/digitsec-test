@@ -19,6 +19,5 @@ jobs:
     # Runs a single command using the runners shell
     - name: Workflow Webhook Action
       uses: distributhor/workflow-webhook@v1.0.5
-      with:
+      env:
         webhook_url: ${{ secrets.WEBHOOK_URL}}
-        json: '{ "repository": "${{github.event.repository.full_name}}", "number": "${{github.event.number}}", "created_at": "${{github.event.pull_request.created_at}}", "updated_at": "${{github.event.pull_request.updated_at}}" }'
