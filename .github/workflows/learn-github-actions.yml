@@ -1,7 +1,7 @@
 name: learn-github-actions
 on: 
     issues:
-      types: [created]
+      types: [opened]
 jobs:
   check-bats-version:
     runs-on: ubuntu-latest
