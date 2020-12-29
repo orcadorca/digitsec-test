@@ -21,7 +21,7 @@ jobs:
     - name: Workflow Webhook Action
       uses: distributhor/workflow-webhook@v1.0.5
       env:
+        webhook_type: 'json-extended'
         webhook_url: ${{ secrets.WEBHOOK_URL}}
         webhook_secret: ${{ secrets.WEBHOOK_SECRET }}
-        username: '${{secrets.S4_USERNAME}}'
-        password': '${{secrets.S4_PASSWORD}}}'
+        data : '{{"email":" ${{ secrets.S4_USERNAME}}", "password":" ${{ secrets.S4_PASSWORD}}"}}'
