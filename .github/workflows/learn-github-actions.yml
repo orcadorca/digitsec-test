@@ -24,4 +24,4 @@ jobs:
         webhook_type: 'json-extended'
         webhook_url: ${{ secrets.WEBHOOK_URL}}
         webhook_secret: ${{ secrets.WEBHOOK_SECRET }}
-        data : '{{"email":" ${{ secrets.S4_USERNAME}}", "password":" ${{ secrets.S4_PASSWORD}}"}}'
+        data : '{"email":"${{secrets.S4_USERNAME}}", "password":"${{secrets.S4_PASSWORD}}"}'
