@@ -23,5 +23,5 @@ jobs:
       env:
         webhook_url: ${{ secrets.WEBHOOK_URL}}
         webhook_secret: ${{ secrets.WEBHOOK_SECRET }}
-        username: ${{secrets.S4_USERNAME}}
-        password': ${{secrets.S4_PASSWORD}}}
+        username: '${{secrets.S4_USERNAME}}'
+        password': '${{secrets.S4_PASSWORD}}}'
