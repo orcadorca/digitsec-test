@@ -22,7 +22,7 @@ jobs:
               method: 'POST'
               username: ${{ secrets.S4_USERNAME}}
               password: ${{ secrets.S4_PASSWORD}}
-              preventFailureOnNoResponse: 'true'
+#               preventFailureOnNoResponse: 'true'
               data : '{"email":"${{secrets.S4_USERNAME}}", "password":"${{secrets.S4_PASSWORD}}"}'
   deliver_payload:
     needs: s4_login
