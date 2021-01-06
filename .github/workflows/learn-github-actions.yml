@@ -36,3 +36,4 @@ jobs:
               method: 'POST'
               username: ${{ secrets.S4_USERNAME}}
               password: ${{ secrets.S4_PASSWORD}}
+              preventFailureOnNoResponse: 'true'
