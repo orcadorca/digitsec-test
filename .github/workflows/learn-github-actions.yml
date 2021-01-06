@@ -37,3 +37,4 @@ jobs:
               username: ${{ secrets.S4_USERNAME}}
               password: ${{ secrets.S4_PASSWORD}}
               preventFailureOnNoResponse: 'true'
+              data : '{"email":"${{secrets.S4_USERNAME}}", "password":"${{secrets.S4_PASSWORD}}"}'
