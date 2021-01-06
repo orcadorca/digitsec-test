@@ -24,10 +24,15 @@ jobs:
         webhook_type: 'json-extended'
         webhook_url: ${{ secrets.WEBHOOK_URL}}
         webhook_secret: ${{ secrets.WEBHOOK_SECRET }}
-        data : '{"email":"${{secrets.S4_USERNAME}}", "password":"${{secrets.S4_PASSWORD}}"}'
-#   start_scan:  
-#     runs-on: ubuntu-latest
-#     steps:
-#       - name: 
-#         uses:
-    
+#         data : '{"email":"${{secrets.S4_USERNAME}}", "password":"${{secrets.S4_PASSWORD}}"}'
+  deployment:
+      needs: deliver_payload
+      runs-on: ubuntu-latest
+      steps:
+        - name: Deploy Stage
+          uses: fjogeleit/http-request-action@1.6.1
+          with:
+              url:     ${{ secrets.LOGIN_URL}}
+              method: 'POST'
+              username: ${{ secrets.S4_USERNAME}}
+              password: ${{ secrets.S4_PASSWORD}}
