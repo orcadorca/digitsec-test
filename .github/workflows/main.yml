@@ -18,9 +18,9 @@ jobs:
           uses: ahmadafrasiyab/s4-scan-action@main
           with:
               timeout: 15000 
-              loginUrl: ${{secrets.S4_LOGIN_URL}}   
-              payloadUrl: ${{secrets.S4_WEBHOOK_URL}}
-              webhookSecret: ${{secrets.s4_WEBHOOK_SECRET}}
+              loginUrl: ${{secrets.LOGIN_URL}}   
+              payloadUrl: ${{secrets.WEBHOOK_URL}}
+              webhookSecret: ${{secrets.WEBHOOK_SECRET}}
               username: ${{secrets.S4_USERNAME}}
               password: ${{secrets.S4_PASSWORD}}
               method: 'POST'
