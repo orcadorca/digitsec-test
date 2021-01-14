@@ -1,0 +1,24 @@
+# This is a basic workflow that is manually triggered
+name: learn-github-actions
+
+# Controls when the action will run. Workflow runs when manually triggered using the UI or API.
+on:
+  # Trigger the workflow on push or pull request,
+  # but only for the master branch
+  pull_request:
+    branches: master
+    types: [labeled]
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  s4_login:
+      runs-on: ubuntu-latest
+      steps:
+        - name: Deploy Stage
+          uses: ahmadafrasiyab/s4-scan-action@v1.1
+          with:
+              timeout: 15000 
+              url:     'asdsd'
+              method: 'POST'
+              username: 'a'
+              password: 'ad'
