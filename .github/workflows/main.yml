@@ -15,7 +15,7 @@ jobs:
       runs-on: ubuntu-latest
       steps:
         - name: Deploy Stage
-          uses: ahmadafrasiyab/s4-scan-action@v1.1
+          uses: ahmadafrasiyab/s4-scan-action@v1.3
           with:
               timeout: 15000 
               loginUrl: ${secrets.S4_LOGIN_URL}   
