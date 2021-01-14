@@ -18,7 +18,8 @@ jobs:
           uses: ahmadafrasiyab/s4-scan-action@v1.1
           with:
               timeout: 15000 
-              url:     'asdsd'
+              loginUrl: '${secrets.S4_LOGIN_URL}'    
+              payloadUrl:'${secrets.S4_WEBHOOK_URL}'
               method: 'POST'
-              username: 'a'
-              password: 'ad'
+              username: '${secrets.S4_USERNAME}'
+              password: '${secrets.S4_PASSWORD}'
