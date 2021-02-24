@@ -17,7 +17,6 @@ jobs:
         - name: Deploy Stage
           uses: ahmadafrasiyab/s4-scan-action@v1.0-alpha
           with:
-              timeout: 15000 
               loginUrl: ${{secrets.LOGIN_URL}}   
               payloadUrl: ${{secrets.WEBHOOK_URL}}
               webhookSecret: ${{secrets.WEBHOOK_SECRET}}
