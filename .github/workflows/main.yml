@@ -1,26 +1,22 @@
-# This is a basic workflow that is manually triggered
-name: learn-github-actions
+name: "Upload SARIF"
 
-# Controls when the action will run. Workflow runs when manually triggered using the UI or API.
+# Run workflow each time code is pushed to your repository and on a schedule.
+# The scheduled workflow runs every Thursday at 15:45 UTC.
 on:
-  # Trigger the workflow on push or pull request,
-  # but only for the master branch
-  pull_request:
-    branches: master
-    types: [opened, reopened]
-    
+  push:
 
-# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+
 jobs:
-  s4_login:
-      runs-on: ubuntu-latest
-      steps:
-        - name: Deploy Stage
-          uses: ahmadafrasiyab/s4-security-scan@v1.1-beta
-          with:
-              loginUrl: ${{secrets.LOGIN_URL}}   
-              payloadUrl: ${{secrets.WEBHOOK_URL}}
-              webhookSecret: ${{secrets.WEBHOOK_SECRET}}
-              username: ${{secrets.S4_USERNAME}}
-              password: ${{secrets.S4_PASSWORD}}
-              method: 'POST'
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      security-events: write
+    steps:
+      # This step checks out a copy of your repository.
+      - name: Checkout repository
+        uses: actions/checkout@v2
+      - name: Upload SARIF file
+        uses: github/codeql-action/upload-sarif@v1
+        with:
+          # Path to SARIF file relative to the root of the repository
+          sarif_file: results.sarif
