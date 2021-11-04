@@ -9,7 +9,7 @@
     <isTLSv12RequiredCommunities xsi:nil="true"/>
     <networkAccess/>
     <passwordPolicies>
-        <complexity>AlphaNumeric</complexity>
+        <complexity>NoRestriction</complexity>
         <expiration>NinetyDays</expiration>
         <historyRestriction>3</historyRestriction>
         <lockoutInterval>FifteenMinutes</lockoutInterval>

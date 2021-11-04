@@ -33,7 +33,7 @@
         <name>StaticResource</name>
     </types>
     <types>
-        <members>Security</members>
+        <members>*</members>
         <name>Settings</name>
     </types> 
      <types>
